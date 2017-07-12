@@ -20,5 +20,6 @@
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical">
 
+        <!--android:listSelector="@android:color/transparent"-->
     </com.example.fresh.view.XListView>
 </RelativeLayout>

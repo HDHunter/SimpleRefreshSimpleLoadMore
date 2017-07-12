@@ -10,7 +10,6 @@ package com.example.fresh.view;
 
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
@@ -122,7 +121,7 @@ public class XListView extends ListView implements OnScrollListener {
         addHeaderView(mHeaderView, null, false);
 
         // init footer view
-        mFooterView = new XListViewFooter(context);
+        mFooterView = new XListViewFooter(context, this);
         // init header height
         mHeaderView.getViewTreeObserver().addOnGlobalLayoutListener(
                 new OnGlobalLayoutListener() {
@@ -135,6 +134,13 @@ public class XListView extends ListView implements OnScrollListener {
 
         setPullLoadEnable(isPullLoad);//初始化不支持上啦加载
         mFooterView.getmHintView().setOnClickListener(footViewClick);
+        mFooterView.getNoDataDefaultText().setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListViewListener != null) mListViewListener.onRefresh();
+                mFooterView.setNoneDataLoadingState(true);
+            }
+        });
     }
 
     @Override
@@ -179,7 +185,7 @@ public class XListView extends ListView implements OnScrollListener {
             mFooterView.hide();
             //make sure "pull up" don't show a line in bottom when listview with one page
             setFooterDividersEnabled(false);
-            mFooterView.setOnClickListener(null);
+            mFooterView.getmHintView().setOnClickListener(null);
         } else {
             mFooterView.show();
             mFooterView.setState(XListViewFooter.STATE_NORMAL);
@@ -200,14 +206,15 @@ public class XListView extends ListView implements OnScrollListener {
             } else {
                 mHeaderView.setState(XListViewHeader.STATE_FRESH_FAILT);
             }
-            new Handler().postDelayed(new Runnable() {
+            postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     mPullRefreshing = false;
                     resetHeaderHeight();
                 }
             }, 1000);
-
+        } else {
+            mFooterView.setNoneDataLoadingState(false);
         }
     }
 
