@@ -1,5 +1,5 @@
 
-***Perfect Refresh Widget***
+##Perfect Refresh Widget
 
 
 *1,support auto pull down Refreshing*
@@ -13,9 +13,12 @@
 *5,So Easy,So Simply.just 3 classes, Easy to Redefine.*
 
 
-|
-|
-|
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 *any problem ,please issues,or email to me.*
 *        zhangjianqiu007@126.com*
 
