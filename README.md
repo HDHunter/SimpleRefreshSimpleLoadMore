@@ -2,12 +2,15 @@
 ##Perfect Refresh Widget
 
 为空布局的点击：
+
 ![image](https://github.com/HDHunter/SimpleRefreshSimpleLoadMore/tree/master/screenshots/emptyclick.gif )  
 
 加载更多，点击加载更多：
+
 ![image](https://github.com/HDHunter/SimpleRefreshSimpleLoadMore/tree/master/screenshots/loadingmore.gif )  
 
 下拉刷新更多：
+
 ![image](https://github.com/HDHunter/SimpleRefreshSimpleLoadMore/tree/master/screenshots/refreshing.gif )  
 
 
