@@ -1,11 +1,3 @@
-/**
- * @file XListView.java
- * @package com.limxing.library.XListView
- * @create Mar 18, 2012 6:28:41 PM
- * @author Limxing
- * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
- * Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
- */
 package com.example.fresh.view;
 
 
@@ -31,11 +23,13 @@ import com.example.fresh.R;
 /**
  * 下拉刷新，上滑自动加载。foot包含为空布局。
  * <pre>
- *  startRefresh();
- *  stopLoadMore();
- *  stopLoadMore(Msg);
- *  setNoDataDefaultString();
- *  setNoDataDefaultImg();
+ *      startRefresh();
+ *      stopLoadMore();
+ *      stopLoadMore(Msg);
+ * setFootText(string);
+ * setHeaderText(string);
+ *      setNoDataDefaultString(stringId);
+ *      setNoDataDefaultImg(drawableId);
  * </pre>
  * <p>
  * 不再使用上拉刷新，而改用scroll响应式 zhangjianqiu 2017-7-11
